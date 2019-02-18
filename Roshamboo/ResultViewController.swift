@@ -53,7 +53,6 @@ class ResultViewController: UIViewController {
         }
         
         imageName = imageName.lowercased()
-        print(imageName)
         resultText.text = text
         resultImage.image = UIImage(named: imageName)
     }
