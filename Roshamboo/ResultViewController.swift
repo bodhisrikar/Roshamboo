@@ -30,10 +30,17 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Play Again", style: .plain, target: self, action: #selector(playAgain))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         displayResult()
+    }
+    
+    @objc func playAgain() {
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     
     private func displayResult() {
@@ -55,10 +62,5 @@ class ResultViewController: UIViewController {
         imageName = imageName.lowercased()
         resultText.text = text
         resultImage.image = UIImage(named: imageName)
-    }
-    
-    
-    @IBAction func dismiss(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 }
