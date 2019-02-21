@@ -13,7 +13,7 @@ class RockPaperScissorsViewController: UIViewController {
     @IBAction func choiceRock(_ sender: UIButton) {
         let resultController = storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
         resultController.userChoice = getUserChoice(sender)
-        show(resultController, sender: nil)
+        navigationController?.pushViewController(resultController, animated: true)
         //present(resultController, animated: true, completion: nil)
     }
     
